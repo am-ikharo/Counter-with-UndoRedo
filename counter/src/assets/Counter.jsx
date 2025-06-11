@@ -16,10 +16,10 @@ const Counter = () => {
                 <div className='text-7xl font-bold tabular-nums'>{currentValue}</div>
             </div>
             <div className='flex gap-2 justify-center items-center'>
-                <button >
+                <button onClick={decrement}>
                     <i className="h-4 w-4">-</i>
                 </button>
-                <button>
+                <button onClick={increment}>
                     <i className='h-4 w-4'>+</i>
                 </button>
             </div>
