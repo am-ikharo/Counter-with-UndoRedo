@@ -8,8 +8,19 @@ const Counter = () => {
 
     const currentValue = history[position]
 
+    const addValueToHistory = (newValue) => {
+
+        const newHistory = history.slice(0, position + 1)
+        setHistory([...newHistory, newValue])
+        setPosition(position + 1)
+    }
+    console.log(history, position);
+
+    const decrement = () => addValueToHistory(currentValue -1)
+    const increment = () => addValueToHistory(currentValue +1)
+
   return (
-    <div className='flex flex-col pt-[150px] justify-center bg-gray-50'>
+    <div className='mx-100 flex flex-col pt-[150px] justify-center bg-gray-50'>
         <h1>Counter with Undo/Redo</h1>
         <div className='flex flex-col justify-center gap-4 flex mt-15'>
             <div className='flex justify-center item-center'>
